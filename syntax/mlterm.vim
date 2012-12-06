@@ -40,7 +40,7 @@ syntax keyword mltermOption
       \ use_variable_column_width use_vertical_cursor vertical_mode
       \ wall_picture word_separators
 
-syntax Keyword mltermBoolean true false none
+syntax keyword mltermBoolean true false none
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
