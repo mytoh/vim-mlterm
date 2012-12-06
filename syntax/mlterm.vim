@@ -40,7 +40,10 @@ syntax keyword mltermOption
       \ use_variable_column_width use_vertical_cursor vertical_mode
       \ wall_picture word_separators
 
+syntax match mltermEncoding  "utf-8"
+
 syntax keyword mltermBoolean true false none
+syntax match mltermNumber  "\(\s\+\|=\)\(\d\+\)"
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
@@ -49,6 +52,8 @@ hi def link mltermTodo          Todo
 hi def link mltermString	String
 hi def link mltermOption        Keyword
 hi def link mltermBoolean       Boolean
+hi def link mltermNumber        Number
+hi def link mltermEncoding      Constant
 
 
 let b:current_syntax = "mlterm"
