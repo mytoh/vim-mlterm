@@ -39,6 +39,12 @@ syntax keyword mltermOption
       \ use_scrollbar use_transbg use_unicode_property
       \ use_variable_column_width use_vertical_cursor vertical_mode
       \ wall_picture word_separators
+" not detected by tools/extract_keywords.sh
+syntax keyword mltermOption
+      \ depth use_xim daemon_mode conf_menu_path_1 conf_menu_path_2
+      \ ssh_keepalive_interval max_ptys startup_screens iscii_lang
+      \ compose_dec_special_font use_cp932_ucs_for_xft
+      \ font_size_range 
 
 syntax match mltermEncoding  "\v\cutf-8"
 syntax match mltermEncoding  "\v\cISO-8859-[1-11]"
