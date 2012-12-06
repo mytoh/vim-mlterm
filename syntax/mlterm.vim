@@ -10,8 +10,8 @@ endif
 
 syn keyword	mltermTodo	contained TODO FIXME XXX
 " Avoid matching "text#text", used in /etc/disktab and /etc/gettytab
-syn match	mltermComment	"^#.*" contains=mltermTodo
-syn match	mltermComment	"\s#.*"ms=s+1 contains=mltermTodo
+syn match	mltermComment	"\v^#.*" contains=mltermTodo
+syn match	mltermComment	"\v\s#.*"ms=s+1 contains=mltermTodo
 syn region	mltermString	start=+"+ skip=+\\\\\|\\"+ end=+"+ oneline
 syn region	mltermString	start=+'+ skip=+\\\\\|\\'+ end=+'+ oneline
 
@@ -40,10 +40,40 @@ syntax keyword mltermOption
       \ use_variable_column_width use_vertical_cursor vertical_mode
       \ wall_picture word_separators
 
-syntax match mltermEncoding  "utf-8"
+syntax match mltermEncoding  "\v\cutf-8"
+syntax match mltermEncoding  "\v\cISO-8859-[1-11]"
+" syntax match mltermEncoding  "\v\cISO-8859-[13-16]"
+syntax match mltermEncoding  "\v\cTIS-620"
+syntax match mltermEncoding  "\v\c KOI8-[RUT]"
+syntax match mltermEncoding  "\v\cISCII"
+syntax match mltermEncoding  "\v\cVISCII"
+syntax match mltermEncoding  "\v\cTCVN5712"
+syntax match mltermEncoding  "\v\cGEORGIAN_PS"
+syntax match mltermEncoding  "\v\cCP125[0-8]"
+syntax match mltermEncoding  "\v\cCP874"
+syntax match mltermEncoding  "\v\c EUC-JP"
+syntax match mltermEncoding  "\v\cEUC-JISX0213"
+syntax match mltermEncoding  "\v\cShift_JIS"
+syntax match mltermEncoding  "\v\cShift_JISX0213"
+syntax match mltermEncoding  "\v\cISO-2022-JP[1-3]"
+syntax match mltermEncoding  "\v\cEUC-KR"
+syntax match mltermEncoding  "\v\cUHC"
+syntax match mltermEncoding  "\v\cJOHAB"
+syntax match mltermEncoding  "\v\cISO-2022-KR"
+syntax match mltermEncoding  "\v\cGB2312"
+syntax match mltermEncoding  "\v\cGBK"
+syntax match mltermEncoding  "\v\cGB18030"
+syntax match mltermEncoding  "\v\cISO-2022-CN"
+syntax match mltermEncoding  "\v\cHZ"
+syntax match mltermEncoding  "\v\cEUC-TW"
+syntax match mltermEncoding  "\v\cBIG5"
+syntax match mltermEncoding  "\v\cBIG5HKSCS"
+syntax match mltermEncoding  "\v\cUTF-8"
+syntax match mltermEncoding  "\v\cAUTO"
 
 syntax keyword mltermBoolean true false none
-syntax match mltermNumber  "\(\s\+\|=\)\(\d\+\)"
+
+syntax match mltermNumber  "\v\=(\s*)\zs(\d+)"
 
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
