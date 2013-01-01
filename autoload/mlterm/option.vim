@@ -42,7 +42,7 @@ syntax keyword mltermOption
 endfunction
 
 function! s:define_highlights()
-  hi def link mltermOption        Keyword
+  highlight define link mltermOption        PreProc
 endfunction
 
 let &cpo = s:save_cpo
